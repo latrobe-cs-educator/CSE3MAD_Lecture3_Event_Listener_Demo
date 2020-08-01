@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lecture3Demo</string>
+    <string name="anon_class_button">Anon Class Button</string>
+    <string name="xml_listener_example">XML LIstener Example</string>
+    <string name="go_to_class_example">Go To Class Example</string>
+    <string name="button">Button</string>
+    <string name="long_click_example">Long Click Example</string>
+    <string name="button_one">Button One</string>
+    <string name="button_two">Button Two</string>
+    <string name="return_to_main">Return to Main</string>
+    <string name="implicit_intent_open_webpage">Implicit Intent Open WebPage</string>
+</resources>
