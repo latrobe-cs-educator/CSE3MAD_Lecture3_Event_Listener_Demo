@@ -9,4 +9,6 @@
     <string name="button_two">Button Two</string>
     <string name="return_to_main">Return to Main</string>
     <string name="implicit_intent_open_webpage">Implicit Intent Open WebPage</string>
+    <string name="anonymous_inner_class_button">anonymous inner class button</string>
+    <string name="named_class_button">Named Class Button</string>
 </resources>

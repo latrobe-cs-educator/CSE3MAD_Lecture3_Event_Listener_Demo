@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
 {
-    Button Anon_Btn, GoTo_Btn, Long_Click_Btn, Implicit_intent_Btn;
+    Button Anon_Btn, Named_Btn, GoTo_Btn, Long_Click_Btn, Implicit_intent_Btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,17 +24,26 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         Anon_Btn = (Button)findViewById(R.id.AnonBtn);
+        Named_Btn = (Button)findViewById(R.id.NamedBtn);
         GoTo_Btn = (Button)findViewById(R.id.GoToClassExample);
         Long_Click_Btn = (Button)findViewById(R.id.longClickBtn);
         Implicit_intent_Btn = (Button)findViewById(R.id.impBtn);
 
-        // Register the onClick listener with Anonymous Inner Class
+        /*Android developers often use anonymous inner classes to define specialized listeners, which register
+        //callbacks for specific behavior when an event occurs. For example, to listen for clicks on a View control,
+        //the developer must call the setOnClickListener() method, which takes a single parameter: a View.OnClickListener object.
+        //Developers routinely use the anonymous inner class technique to create, define and use their custom View.OnClickListener */
+
+        //Register the onClick listener with Anonymous Inner Class
         Anon_Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "I used an Anonymous Inner Class", Toast.LENGTH_SHORT).show();
             }
         });
+
+        //Using a named inner class is more cumbersome and simply not required
+        Named_Btn.setOnClickListener(new MyNamedListener());
 
         //Standard and LongClick examples
         Long_Click_Btn.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +69,12 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
+    }
+
+    class MyNamedListener implements View.OnClickListener {
+        public void onClick(View arg0) {
+            Toast.makeText(getApplicationContext(), "I used a Named Class", Toast.LENGTH_SHORT).show();
+        }
     }
 
     //Less preferred as it doesn't follow the stand Android separation of function and presentation

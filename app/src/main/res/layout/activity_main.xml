@@ -19,7 +19,13 @@
             android:id="@+id/AnonBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/anon_class_button" />
+            android:text="@string/anonymous_inner_class_button" />
+
+        <Button
+            android:id="@+id/NamedBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/named_class_button" />
 
         <Button
             android:id="@+id/XMLBtn"
