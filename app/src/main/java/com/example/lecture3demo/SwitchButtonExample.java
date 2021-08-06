@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 public class SwitchButtonExample extends AppCompatActivity implements View.OnClickListener {
 
     Button btn1, btn2, btn3;
+    String message;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,14 @@ public class SwitchButtonExample extends AppCompatActivity implements View.OnCli
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
+
+        //Get the data from the intent
+        Bundle extras = getIntent().getExtras();
+
+        if (extras != null) {
+            message = extras.getString("Msg");
+            Log.d("IntentData", message);
+        }
     }
 
     // Implement the OnClickListener callback
@@ -38,7 +48,7 @@ public class SwitchButtonExample extends AppCompatActivity implements View.OnCli
             }
             case R.id.button2:
             {
-                Toast.makeText(this, "Button 2 clicked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
                 break;
             }
             case R.id.button3:

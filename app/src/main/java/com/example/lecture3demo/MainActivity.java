@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity
     public void goToSwitchActivity(View view) {
         //EXPLICIT intent example
         Intent intent = new Intent(this, SwitchButtonExample.class);
+        intent.putExtra("Msg", "Hi from main activity");
         startActivity(intent);
     }
 }
